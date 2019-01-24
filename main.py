@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
-
+from essaySelenium import test_search 
 import argparse
 from appartment_group_handler import validatePrice
 from selenium import webdriver
@@ -16,6 +16,8 @@ def args():
 
     parser.add_argument("-l", "--localisation", help="Filtre sur les lieu des annonces", required=False, type=str)
     
+    parser.add_argument("--lk","--link", help="Lien de la page", type=str )
+
     return parser.parse_args()
 
 if __name__ == '__main__':
@@ -24,4 +26,8 @@ if __name__ == '__main__':
         print(arguments.number**2)
     if arguments.pr is not None:
         validatePrice(arguments.pr)
+    else:
+        pass
+
+    test_search()
 
